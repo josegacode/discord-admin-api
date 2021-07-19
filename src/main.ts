@@ -1,9 +1,10 @@
 // User modules
 import router from "./routes/discord.routes.ts"
 import {
-	Application,
-	config
-} from './deps.ts';
+	Application
+} from 'https://deno.land/x/oak/mod.ts';
+
+//config();
 
 // Server object
 const app: Application = new Application();
@@ -14,11 +15,11 @@ app.use(router.routes());
 // Middleware for let http requests
 app.use(router.allowedMethods());
 
-const PORT = parseInt(env.PORT) || 7000;
+//const PORT = parseInt(Deno.env.get('PORT')) || 7001;
 
 try {
-	await app.listen({ port: PORT });
-	console.log(`Denno running on port ${PORT}`);
+	await app.listen({ port: 3000 });
+	console.log(`Denno running on port ${3000}`);
 } catch(error) {
 	console.error(error);
 }

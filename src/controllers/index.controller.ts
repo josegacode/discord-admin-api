@@ -2,4 +2,9 @@ import {
 	Request,
 	Response,
 	Body
-} from 'deps.ts'
+} from 'https://deno.land/x/oak/mod.ts'
+/*
+export const helloWorld = ({ response }: { response: Response }) => {
+	response.body = 'Hello World from deno';
+}
+*/

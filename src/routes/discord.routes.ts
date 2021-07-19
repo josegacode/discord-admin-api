@@ -1,12 +1,12 @@
-import { Router, Request, Response } from './deps.ts';
-const api = new Router();
+import { Router, Request, Response } from 'https://deno.land/x/oak/mod.ts';
+import * as controller from '../controllers/index.controller.ts';
 
-api.get('/', (req: Request, res: Response) => {
-	res.status(200).send({ status: 'Denno running!' });
-})
+const router = new Router();
 
-api.get('/:id', (req: Request, res: Response) => {
-	res.status(200).send({ param: req.params.id });
-})
+router
+	.get('/', ({ response }: { response: Response }) => {
+		response.body = 'Hello World';
+	});
 
-export { api };
+export default router;
+
